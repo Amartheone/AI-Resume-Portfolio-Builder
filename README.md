@@ -2,7 +2,7 @@
 
 An AI-powered web application that helps students and professionals create **polished resumes**, **personalized cover letters**, and **stunning portfolios** — all enhanced by the Groq AI engine.
 
-Built with **Streamlit** and powered by **Groq's Llama 3.1 70B** model, this tool transforms basic career information into professional, ATS-friendly documents ready for download as PDFs.
+Built with **Streamlit** and powered by **Groq's Llama 3.1 70B** model, this tool transforms basic career information into professional, ATS-friendly documents ready for download.
 
 ---
 
@@ -14,7 +14,7 @@ Built with **Streamlit** and powered by **Groq's Llama 3.1 70B** model, this too
 | ✉️ **Cover Letter Builder** | Create personalized, job-specific cover letters tailored to any position and company |
 | 🎨 **Portfolio Builder** | Build a professional portfolio showcasing your projects, skills, and achievements |
 | 🤖 **AI Enhancement** | Automatically improve bullet points, generate summaries, and enhance project descriptions using Groq AI |
-| 📄 **PDF Export** | Download all generated documents as beautifully formatted PDFs |
+| 📄 **Document Export** | Download all generated documents as self-contained HTML files — open in any browser and print to PDF |
 | 🔑 **Flexible API Setup** | Provide your Groq API key via environment variable, Streamlit secrets, or the in-app sidebar |
 | 🛡️ **Fallback Mode** | Works even without an API key — generates basic template content so you can still use the tool |
 
@@ -75,7 +75,7 @@ AI-Resume-Portfolio-Builder/
 │   ├── resume_builder.py          # Resume data processing & HTML formatting
 │   ├── coverletter_builder.py     # Cover letter generation & formatting
 │   ├── portfolio_builder.py       # Portfolio creation & formatting
-│   └── pdf_exporter.py            # HTML-to-PDF conversion (xhtml2pdf)
+│   └── pdf_exporter.py            # Document export (print-ready HTML)
 ├── styles/
 │   └── document_styles.css        # Shared CSS for all generated documents
 ├── .streamlit/
@@ -94,9 +94,7 @@ AI-Resume-Portfolio-Builder/
 |---|---|
 | [Streamlit](https://streamlit.io/) | Web application framework & UI |
 | [Groq API](https://groq.com/) | AI content generation (Llama 3.1 70B) |
-| [xhtml2pdf](https://xhtml2pdf.readthedocs.io/) | Pure-Python HTML-to-PDF conversion |
 | [python-dotenv](https://pypi.org/project/python-dotenv/) | Environment variable management |
-| [Pillow](https://python-pillow.org/) | Image processing support |
 
 ---
 
@@ -106,20 +104,20 @@ AI-Resume-Portfolio-Builder/
 1. Navigate to the **Resume** tab
 2. Fill in your personal information, skills, education, experience, and projects
 3. Click **🚀 Generate Resume** — AI will enhance your bullet points and generate a professional summary
-4. Preview the result and download it as a PDF
+4. Preview the result and download it (open the file in your browser → **Ctrl+P** / **Cmd+P** to save as PDF)
 
 ### ✉️ Cover Letter Builder
 1. Navigate to the **Cover Letter** tab
 2. Enter your background information and the target job details
 3. Paste the job description for best results
 4. Click **🚀 Generate Cover Letter** — AI will craft a personalized letter
-5. Preview and download
+5. Preview and download (print to PDF from your browser)
 
 ### 🎨 Portfolio Builder
 1. Navigate to the **Portfolio** tab
 2. Add your personal details, skills, projects, and achievements
 3. Click **🚀 Generate Portfolio** — AI will enhance your project descriptions and create a skills summary
-4. Preview your portfolio and download the PDF
+4. Preview your portfolio and download (print to PDF from your browser)
 
 ---
 
@@ -152,9 +150,7 @@ To deploy on [Streamlit Community Cloud](https://streamlit.io/cloud):
 ```
 streamlit>=1.31.0
 groq>=0.4.2
-xhtml2pdf>=0.2.11
 python-dotenv>=1.0.0
-Pillow>=10.3.0
 ```
 
 ---
