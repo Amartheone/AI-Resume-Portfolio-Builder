@@ -1,262 +1,183 @@
 # 🎓 AI Resume & Portfolio Builder
 
-A powerful Streamlit web application that helps students create professional resumes, cover letters, and portfolios using AI-powered content generation.
+An AI-powered web application that helps students and professionals create **polished resumes**, **personalized cover letters**, and **stunning portfolios** — all enhanced by the Groq AI engine.
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
-![Streamlit](https://img.shields.io/badge/streamlit-1.31+-red.svg)
+Built with **Streamlit** and powered by **Groq's Llama 3.1 70B** model, this tool transforms basic career information into professional, ATS-friendly documents ready for download as PDFs.
+
+---
 
 ## ✨ Features
 
-- **📝 AI-Powered Resume Builder**
-  - Professional, ATS-friendly resume templates
-  - AI-enhanced bullet points and descriptions
-  - Multiple industry-standard layouts
-  - Automatic professional summary generation
+| Feature | Description |
+|---|---|
+| 📝 **Resume Builder** | Generate ATS-friendly resumes with AI-enhanced bullet points, professional summaries, and project descriptions |
+| ✉️ **Cover Letter Builder** | Create personalized, job-specific cover letters tailored to any position and company |
+| 🎨 **Portfolio Builder** | Build a professional portfolio showcasing your projects, skills, and achievements |
+| 🤖 **AI Enhancement** | Automatically improve bullet points, generate summaries, and enhance project descriptions using Groq AI |
+| 📄 **PDF Export** | Download all generated documents as beautifully formatted PDFs |
+| 🔑 **Flexible API Setup** | Provide your Groq API key via environment variable, Streamlit secrets, or the in-app sidebar |
+| 🛡️ **Fallback Mode** | Works even without an API key — generates basic template content so you can still use the tool |
 
-- **✉️ Personalized Cover Letter Generator**
-  - Job-specific cover letters
-  - AI-powered content matching job requirements
-  - Professional formatting
-
-- **🎨 Dynamic Portfolio Builder**
-  - Modern, eye-catching portfolio layouts
-  - Project showcase with AI-enhanced descriptions
-  - Skills highlighting and achievements
-
-- **📄 PDF Export**
-  - One-click PDF download
-  - Print-optimized formatting
-  - Professional styling
+---
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
-- Python 3.8 or higher
-- Groq API key (free tier available at [console.groq.com](https://console.groq.com/))
+- Python 3.8+
+- A free [Groq API key](https://console.groq.com/) (optional but recommended for AI features)
 
-### Local Installation
+### Installation
 
-1. **Clone or navigate to the project directory**
+1. **Clone the repository**
    ```bash
-   cd /Users/amartheone/Developer/Edunet
+   git clone https://github.com/your-username/AI-Resume-Portfolio-Builder.git
+   cd AI-Resume-Portfolio-Builder
    ```
 
-2. **Install dependencies**
+2. **Create and activate a virtual environment**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate        # macOS / Linux
+   venv\Scripts\activate           # Windows
+   ```
+
+3. **Install dependencies**
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Set up your API key**
-   
-   Create a `.env` file in the project root:
+4. **Set up your API key**
    ```bash
    cp .env.example .env
    ```
-   
-   Edit the `.env` file and add your Groq API key:
+   Open `.env` and replace `your_api_key_here` with your Groq API key:
    ```
-   GROQ_API_KEY=your_actual_api_key_here
+   GROQ_API_KEY=gsk_xxxxxxxxxxxxxxxxxxxxxxxxx
    ```
-   
-   **Get your free API key:**
-   - Visit [console.groq.com](https://console.groq.com/)
-   - Sign up for a free account
-   - Generate an API key
-   - Copy and paste it into your `.env` file
 
-4. **Run the application**
+5. **Run the application**
    ```bash
    streamlit run app.py
    ```
+   The app will open in your browser at `http://localhost:8501`.
 
-5. **Open your browser**
-   
-   The app will automatically open at `http://localhost:8501`
-
-## 📖 How to Use
-
-### Creating a Resume
-
-1. Navigate to the **Resume** tab
-2. Fill in your personal information, education, experience, and skills
-3. Click "Generate Resume"
-4. Preview your AI-enhanced resume
-5. Download as PDF
-
-### Creating a Cover Letter
-
-1. Navigate to the **Cover Letter** tab
-2. Enter your information and the job details
-3. Paste the job description
-4. Click "Generate Cover Letter"
-5. Review and download your personalized cover letter
-
-### Creating a Portfolio
-
-1. Navigate to the **Portfolio** tab
-2. Add your profile information and projects
-3. Click "Generate Portfolio"
-4. Preview your stunning portfolio
-5. Download as PDF
-
-## 🌐 Deploying to Streamlit Cloud
-
-### Step 1: Prepare Your Repository
-
-1. **Initialize Git (if not already done)**
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit: AI Resume & Portfolio Builder"
-   ```
-
-2. **Push to GitHub**
-   ```bash
-   # Create a new repository on GitHub, then:
-   git remote add origin https://github.com/yourusername/ai-resume-builder.git
-   git branch -M main
-   git push -u origin main
-   ```
-
-### Step 2: Deploy on Streamlit Cloud
-
-1. **Visit [share.streamlit.io](https://share.streamlit.io/)**
-
-2. **Sign in with GitHub**
-
-3. **Click "New app"**
-
-4. **Configure your app:**
-   - Repository: Select your GitHub repository
-   - Branch: `main`
-   - Main file path: `app.py`
-
-5. **Add your API key as a secret:**
-   - Click "Advanced settings"
-   - In the "Secrets" section, add:
-     ```toml
-     GROQ_API_KEY = "your_actual_api_key_here"
-     ```
-
-6. **Click "Deploy!"**
-
-Your app will be live at `https://yourusername-ai-resume-builder.streamlit.app`
-
-## 🔧 Configuration
-
-### API Key Configuration
-
-The application supports multiple ways to provide your API key:
-
-1. **Environment Variable** (for local development)
-   - Add to `.env` file: `GROQ_API_KEY=your_key`
-
-2. **Streamlit Secrets** (for deployment)
-   - Add to `.streamlit/secrets.toml`:
-     ```toml
-     GROQ_API_KEY = "your_key"
-     ```
-
-3. **UI Input** (temporary)
-   - Enter in the sidebar settings
-
-### Using Without API Key
-
-The app works without an API key but provides basic template content instead of AI-generated content.
+---
 
 ## 📁 Project Structure
 
 ```
-Edunet/
-├── app.py                      # Main Streamlit application
-├── requirements.txt            # Python dependencies
-├── .env.example               # Environment variables template
-├── .gitignore                 # Git ignore rules
-├── .streamlit/
-│   └── config.toml            # Streamlit configuration
+AI-Resume-Portfolio-Builder/
+├── app.py                          # Main Streamlit application
 ├── modules/
 │   ├── __init__.py
-│   ├── ai_generator.py        # AI content generation
-│   ├── resume_builder.py      # Resume generation logic
-│   ├── coverletter_builder.py # Cover letter generation
-│   ├── portfolio_builder.py   # Portfolio generation
-│   └── pdf_exporter.py        # PDF export functionality
-└── styles/
-    └── document_styles.css    # Document styling
+│   ├── ai_generator.py            # Groq AI content generation engine
+│   ├── resume_builder.py          # Resume data processing & HTML formatting
+│   ├── coverletter_builder.py     # Cover letter generation & formatting
+│   ├── portfolio_builder.py       # Portfolio creation & formatting
+│   └── pdf_exporter.py            # HTML-to-PDF conversion (xhtml2pdf)
+├── styles/
+│   └── document_styles.css        # Shared CSS for all generated documents
+├── .streamlit/
+│   └── config.toml                # Streamlit theme configuration
+├── requirements.txt               # Python dependencies
+├── run.sh                         # Quick-start shell script
+├── .env.example                   # Environment variable template
+└── .gitignore
 ```
-
-## 🛠️ Technologies Used
-
-- **[Streamlit](https://streamlit.io/)** - Web application framework
-- **[Groq API](https://groq.com/)** - AI content generation (Llama 3.1 70B)
-- **[WeasyPrint](https://weasyprint.org/)** - HTML to PDF conversion
-- **Python 3.8+** - Backend logic
-
-## 🎯 Use Cases
-
-- **Students** creating their first professional resume
-- **Job seekers** tailoring applications for specific positions
-- **Freelancers** building project portfolios
-- **Career changers** highlighting transferable skills
-- **Recent graduates** showcasing academic projects
-
-## 🔒 Privacy & Security
-
-- All processing happens on your machine (local) or in your Streamlit Cloud instance
-- No data is stored permanently
-- API communications are encrypted
-- Your documents are never saved on external servers
-
-## 🐛 Troubleshooting
-
-### PDF Generation Issues
-
-If you encounter PDF generation errors:
-
-1. **Install system dependencies** (macOS):
-   ```bash
-   brew install cairo pango gdk-pixbuf libffi
-   ```
-
-2. **Install system dependencies** (Linux):
-   ```bash
-   sudo apt-get install python3-dev python3-pip python3-cffi libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info
-   ```
-
-### API Key Issues
-
-- Ensure no extra spaces in your API key
-- Verify the key is active at [console.groq.com](https://console.groq.com/)
-- Check you haven't exceeded the free tier rate limits
-
-### Import Errors
-
-- Make sure all dependencies are installed: `pip install -r requirements.txt`
-- Use a virtual environment to avoid conflicts
-
-## 📝 License
-
-This project is open source and available under the MIT License.
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-## 📧 Support
-
-If you encounter any issues or have questions:
-- Check the troubleshooting section
-- Review the [Streamlit documentation](https://docs.streamlit.io/)
-- Check [Groq API documentation](https://console.groq.com/docs)
-
-## 🌟 Acknowledgments
-
-- Built with inspiration from modern resume builders
-- Powered by Groq's lightning-fast LLM inference
-- Designed for student success
 
 ---
 
-**Made with ❤️ to help students succeed in their career journey**
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| [Streamlit](https://streamlit.io/) | Web application framework & UI |
+| [Groq API](https://groq.com/) | AI content generation (Llama 3.1 70B) |
+| [xhtml2pdf](https://xhtml2pdf.readthedocs.io/) | Pure-Python HTML-to-PDF conversion |
+| [python-dotenv](https://pypi.org/project/python-dotenv/) | Environment variable management |
+| [Pillow](https://python-pillow.org/) | Image processing support |
+
+---
+
+## 📖 How to Use
+
+### 📝 Resume Builder
+1. Navigate to the **Resume** tab
+2. Fill in your personal information, skills, education, experience, and projects
+3. Click **🚀 Generate Resume** — AI will enhance your bullet points and generate a professional summary
+4. Preview the result and download it as a PDF
+
+### ✉️ Cover Letter Builder
+1. Navigate to the **Cover Letter** tab
+2. Enter your background information and the target job details
+3. Paste the job description for best results
+4. Click **🚀 Generate Cover Letter** — AI will craft a personalized letter
+5. Preview and download
+
+### 🎨 Portfolio Builder
+1. Navigate to the **Portfolio** tab
+2. Add your personal details, skills, projects, and achievements
+3. Click **🚀 Generate Portfolio** — AI will enhance your project descriptions and create a skills summary
+4. Preview your portfolio and download the PDF
+
+---
+
+## ⚙️ Configuration
+
+### API Key Options
+
+You can provide your Groq API key in three ways (in order of priority):
+
+1. **Streamlit Secrets** (for deployment) — add to `.streamlit/secrets.toml`:
+   ```toml
+   GROQ_API_KEY = "gsk_xxxxxxxxxxxxxxxxxxxxxxxxx"
+   ```
+2. **Environment Variable** — set in your `.env` file or shell
+3. **In-App Sidebar** — paste your key directly in the app's settings panel
+
+### Streamlit Deployment
+
+To deploy on [Streamlit Community Cloud](https://streamlit.io/cloud):
+
+1. Push your code to GitHub
+2. Connect your repository on Streamlit Cloud
+3. Add `GROQ_API_KEY` in the app's **Secrets** section
+4. Deploy!
+
+---
+
+## 📦 Dependencies
+
+```
+streamlit>=1.31.0
+groq>=0.4.2
+xhtml2pdf>=0.2.11
+python-dotenv>=1.0.0
+Pillow>=10.3.0
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+<p align="center">
+  Built with ❤️ using Streamlit and Groq AI<br>
+  <em>Helping students succeed in their career journey</em>
+</p>
