@@ -1,0 +1,307 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #1F2937;
+    background: white;
+    padding: 40px;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #4F46E5;
+}
+
+.header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+.contact {
+    font-size: 14px;
+    color: #6B7280;
+}
+
+.contact a {
+    color: #4F46E5;
+    text-decoration: none;
+}
+
+/* Section Styles */
+.section {
+    margin-bottom: 25px;
+}
+
+.section h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+/* Summary */
+.summary {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #374151;
+    margin-bottom: 15px;
+}
+
+/* Skills */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 14px;
+    color: #374151;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.skill-tag {
+    background: #EEF2FF;
+    color: #4F46E5;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Experience Items */
+.experience-item, .education-item, .project-item {
+    margin-bottom: 20px;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 5px;
+}
+
+.item-header strong {
+    font-size: 16px;
+    color: #111827;
+    font-weight: 600;
+}
+
+.period, .tech {
+    font-size: 14px;
+    color: #6B7280;
+    font-style: italic;
+}
+
+.company {
+    font-size: 14px;
+    color: #4F46E5;
+    margin-bottom: 8px;
+}
+
+.experience-item ul, .achievements {
+    margin-left: 20px;
+    margin-top: 8px;
+}
+
+.experience-item li, .achievements li {
+    font-size: 14px;
+    color: #374151;
+    margin-bottom: 5px;
+    line-height: 1.6;
+}
+
+.gpa {
+    font-size: 14px;
+    color: #6B7280;
+    margin-top: 3px;
+}
+
+/* Projects */
+.project-item p {
+    font-size: 14px;
+    color: #374151;
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+.project-link {
+    display: inline-block;
+    color: #4F46E5;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+/* Cover Letter Specific */
+.cover-letter .date {
+    margin: 20px 0;
+    font-size: 14px;
+    color: #6B7280;
+}
+
+.cover-letter .recipient {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.cover-letter .salutation {
+    margin-bottom: 20px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.cover-letter .letter-body p {
+    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #374151;
+    text-align: justify;
+}
+
+.cover-letter .closing {
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.cover-letter .signature {
+    margin-top: 40px;
+    font-weight: 600;
+}
+
+/* Portfolio Specific */
+.portfolio {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 0;
+}
+
+.portfolio-header {
+    background: white;
+    padding: 60px 40px;
+    text-align: center;
+    border-radius: 0 0 30px 30px;
+    margin-bottom: 40px;
+}
+
+.portfolio-header .name {
+    font-size: 42px;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+.portfolio-header .title {
+    font-size: 20px;
+    color: #6B7280;
+    margin-bottom: 20px;
+}
+
+.portfolio .section {
+    background: white;
+    padding: 40px;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about {
+    text-align: center;
+}
+
+.skills-summary {
+    margin-top: 15px;
+    font-size: 15px;
+    color: #6B7280;
+}
+
+.projects-showcase .project-card {
+    background: #F9FAFB;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border-left: 4px solid #4F46E5;
+    transition: transform 0.2s;
+}
+
+.projects-showcase .project-card:hover {
+    transform: translateX(5px);
+}
+
+.project-number {
+    font-size: 36px;
+    font-weight: 800;
+    color: #E5E7EB;
+    margin-bottom: 10px;
+}
+
+.project-card h3 {
+    font-size: 22px;
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+.tech-stack {
+    font-size: 13px;
+    color: #6B7280;
+    margin-bottom: 15px;
+    font-family: 'Courier New', monospace;
+}
+
+.project-description {
+    font-size: 15px;
+    color: #374151;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        padding: 20px;
+        max-width: 100%;
+    }
+    
+    .portfolio {
+        background: white;
+    }
+    
+    .portfolio-header {
+        border-radius: 0;
+    }
+    
+    .portfolio .section {
+        box-shadow: none;
+        margin: 20px 0;
+        page-break-inside: avoid;
+    }
+}
+
+/* PDF Export Optimization */
+@page {
+    margin: 2cm;
+    size: A4;
+}
