@@ -4,6 +4,8 @@ An AI-powered web application that helps students and professionals create **pol
 
 Built with **Streamlit** and powered by **Groq's Llama 3.1 70B** model, this tool transforms basic career information into professional, ATS-friendly documents ready for download.
 
+### 🌐 [Live Demo → resume-builder-with-ai.streamlit.app](https://resume-builder-with-ai.streamlit.app/)
+
 ---
 
 ## ✨ Features
@@ -31,7 +33,7 @@ Built with **Streamlit** and powered by **Groq's Llama 3.1 70B** model, this too
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/AI-Resume-Portfolio-Builder.git
+   git clone https://github.com/amartheone/AI-Resume-Portfolio-Builder.git
    cd AI-Resume-Portfolio-Builder
    ```
 
