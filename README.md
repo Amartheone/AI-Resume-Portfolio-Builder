@@ -165,13 +165,13 @@ Contributions are welcome! Feel free to:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
----
+<!-- ---
 
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
 
----
+--- -->
 
 <p align="center">
   Built with ❤️ using Streamlit and Groq AI<br>
