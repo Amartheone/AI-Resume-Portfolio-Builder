@@ -429,22 +429,23 @@ def render_preview_and_download(content_key):
         with st.expander("👁️ Preview Document", expanded=True):
             st.components.v1.html(content['html'], height=600, scrolling=True)
         
-        # Generate PDF and offer direct download
+        # Generate downloadable HTML file (open in browser → Ctrl+P to save as PDF)
         try:
             pdf_exporter = PDFExporter()
-            pdf_bytes = pdf_exporter.html_to_pdf(content['html'])
+            html_bytes = pdf_exporter.html_to_pdf(content['html'])
             
             col1, col2 = st.columns([3, 1])
             with col2:
                 st.download_button(
-                    label="⬇️ Download PDF",
-                    data=pdf_bytes,
-                    file_name=f"{content_key}.pdf",
-                    mime="application/pdf",
+                    label="⬇️ Download Document",
+                    data=html_bytes,
+                    file_name=f"{content_key}.html",
+                    mime="text/html",
                     key=f"download_btn_{content_key}"
                 )
+            st.caption("💡 Open the downloaded file in your browser, then press **Ctrl+P** / **Cmd+P** to save as PDF.")
         except Exception as e:
-            st.error(f"Error generating PDF: {e}")
+            st.error(f"Error generating download: {e}")
 
 def main():
     """Main application"""
